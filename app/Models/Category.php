@@ -10,8 +10,11 @@ class Category extends Model
     use HasFactory;
     protected $guarded = [];
     protected $dates = ['created_at'];
+    protected $fillable = [
+        'name', 'description'
+    ];
 
-    public function product()
+    public function products()
     {
         return $this->hasMany(Product::class);
     }
